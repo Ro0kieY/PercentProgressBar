@@ -13,13 +13,13 @@ import android.util.Log;
 import android.view.View;
 
 /**
+ * PercentProgressBar
  * Created by Ro0kieY on 2017/7/25.
  */
 
 public class PercentProgressBar extends View {
 
     private final int PROGRESS_BAR_CIRCULAR = 10;
-    private final int PROGRESS_BAR_HORIZONTAL = 11;
 
     //Circular状态的默认宽高
     private final int default_layout_radius;
@@ -104,9 +104,6 @@ public class PercentProgressBar extends View {
     //View的Padding参数
     private float paddingLeft, paddingRight, paddingTop, paddingBottom;
 
-    //Listener
-    private ProgressUpdateListener listener;
-
     public PercentProgressBar(Context context) {
         this(context, null);
     }
@@ -153,7 +150,7 @@ public class PercentProgressBar extends View {
         mMaxProgress = ta.getInt(R.styleable.PercentProgressBar_max_progress, default_max_progress);
         mCurrentProgress = ta.getInt(R.styleable.PercentProgressBar_current_progress, default_current_progress);
         mProgressBarStyle = ta.getInt(R.styleable.PercentProgressBar_progress_bar_style, PROGRESS_BAR_CIRCULAR);
-        Log.d("TypedArray ", "YPercentBarView: " + mProgressBarStyle + "PROGRESS_BAR_CIRCULAR " + PROGRESS_BAR_CIRCULAR);
+        //Log.d("TypedArray ", "YPercentBarView: " + mProgressBarStyle + "PROGRESS_BAR_CIRCULAR " + PROGRESS_BAR_CIRCULAR);
 
         ta.recycle();
 
@@ -232,8 +229,8 @@ public class PercentProgressBar extends View {
             height = heightSpecSize;
         }
 
-        Log.d("Y", "onMeasure " + widthSpecMode + ": " + widthSpecSize);
-        Log.d("Y", "onMeasure " + heightSpecMode + ": " +heightSpecSize);
+        //Log.d("Y", "onMeasure " + widthSpecMode + ": " + widthSpecSize);
+        //Log.d("Y", "onMeasure " + heightSpecMode + ": " +heightSpecSize);
 
         if (mProgressBarStyle == PROGRESS_BAR_CIRCULAR){
             int minSize = Math.min(width, height);
@@ -241,7 +238,7 @@ public class PercentProgressBar extends View {
         } else {
             setMeasuredDimension(width, height);
         }
-        Log.d("PercentProgressBar", "onMeasure: ");
+        //Log.d("PercentProgressBar", "onMeasure: ");
 
         /*if (widthSpecMode == MeasureSpec.AT_MOST && heightSpecMode == MeasureSpec.AT_MOST){
             setMeasuredDimension(default_width_and_height, default_width_and_height);
@@ -254,7 +251,8 @@ public class PercentProgressBar extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        Log.d("PercentProgressBar", "onSizeChanged: ");
+        //Log.d("PercentProgressBar", "onSizeChanged: ");
+        //考虑padding参数
         paddingLeft = getPaddingLeft();
         paddingRight = getPaddingRight();
         paddingTop = getPaddingTop();
@@ -298,7 +296,6 @@ public class PercentProgressBar extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        //先调用drawText，方便取得mTextWidth
         drawText(canvas);
         calculateOuterPath();
         calculateProgressBarPath();
@@ -358,29 +355,150 @@ public class PercentProgressBar extends View {
         canvas.drawPath(mOuterPath, mOuterPaint);
     }
 
-    public void setProgress(int progress){
-        if (progress >= mMaxProgress){
+
+
+    /* --------- Below are getter and setters --------- */
+
+    public float getOuterWidth() {
+        return mOuterWidth;
+    }
+
+    public void setOuterWidth(float OuterWidth) {
+        this.mOuterWidth = OuterWidth;
+        mOuterPaint.setStrokeWidth(mOuterWidth);
+        //进度条的宽度默认比外框小12
+        mProgressBarPaint.setStrokeWidth(mOuterWidth - 12);
+        invalidate();
+    }
+
+    public int getOuterColor() {
+        return mOuterColor;
+    }
+
+    public void setOuterColor(int OuterColor) {
+        this.mOuterColor = OuterColor;
+        mOuterPaint.setColor(mOuterColor);
+        invalidate();
+    }
+
+    public int getOuterAlpha() {
+        return mOuterAlpha;
+    }
+
+    public void setOuterAlpha(int OuterAlpha) {
+        this.mOuterAlpha = OuterAlpha;
+        mOuterPaint.setAlpha(mOuterAlpha);
+        invalidate();
+    }
+
+    public float getProgressBarWidth() {
+        return mProgressBarWidth;
+    }
+
+    public void setProgressBarWidth(float ProgressBarWidth) {
+        this.mProgressBarWidth = ProgressBarWidth;
+        mProgressBarPaint.setStrokeWidth(mProgressBarWidth);
+        mOuterPaint.setStrokeWidth(mProgressBarWidth + 12);
+        invalidate();
+    }
+
+    public int getProgressBarColor() {
+        return mProgressBarColor;
+    }
+
+    public void setProgressBarColor(int ProgressBarColor) {
+        this.mProgressBarColor = ProgressBarColor;
+        mProgressBarPaint.setColor(mProgressBarColor);
+        invalidate();
+    }
+
+    public int getProgressBarAlpha() {
+        return mProgressBarAlpha;
+    }
+
+    public void setProgressBarAlpha(int ProgressBarAlpha) {
+        this.mProgressBarAlpha = ProgressBarAlpha;
+        mProgressBarPaint.setAlpha(mProgressBarAlpha);
+        invalidate();
+    }
+
+    public float getTextSize() {
+        return mTextSize;
+    }
+
+    public void setTextSize(float TextSize) {
+        this.mTextSize = TextSize;
+        mTextPaint.setTextSize(mTextSize);
+        invalidate();
+    }
+
+    public int getTextColor() {
+        return mTextColor;
+    }
+
+    public void setTextColor(int TextColor) {
+        this.mTextColor = TextColor;
+        mTextPaint.setColor(mTextColor);
+        invalidate();
+    }
+
+    public int getTextAlpha() {
+        return mTextAlpha;
+    }
+
+    public void setTextAlpha(int TextAlpha) {
+        this.mTextAlpha = TextAlpha;
+        mTextPaint.setAlpha(mTextAlpha);
+        invalidate();
+    }
+
+    public int getLittleCircleColor() {
+        return mLittleCircleColor;
+    }
+
+    public void setLittleCircleColor(int LittleCircleColor) {
+        this.mLittleCircleColor = LittleCircleColor;
+        mLittleCirclePaint.setColor(mLittleCircleColor);
+        invalidate();
+    }
+
+    public int getLittleCircleAlpha() {
+        return mLittleCircleAlpha;
+    }
+
+    public void setLittleCircleAlpha(int LittleCircleAlpha) {
+        this.mLittleCircleAlpha = LittleCircleAlpha;
+        mLittleCirclePaint.setAlpha(mLittleCircleAlpha);
+        invalidate();
+    }
+
+    public int getMaxProgress() {
+        return mMaxProgress;
+    }
+
+    public void setMaxProgress(int MaxProgress) {
+        this.mMaxProgress = MaxProgress;
+        invalidate();
+    }
+
+    public int getCurrentProgress() {
+        return mCurrentProgress;
+    }
+
+    public void setCurrentProgress(int CurrentProgress) {
+        if (CurrentProgress >= mMaxProgress){
             this.mCurrentProgress = mMaxProgress;
         } else {
-            this.mCurrentProgress = progress;
+            this.mCurrentProgress = CurrentProgress;
         }
         invalidate();
     }
 
-
-
-
     public void progressIncreasedBy(int interval){
-        if (interval > 0 && mCurrentProgress + interval <= mMaxProgress){
-            setProgress(mCurrentProgress + interval);
+        if (mCurrentProgress + interval <= mMaxProgress){
+            setCurrentProgress(mCurrentProgress + interval);
+        } else {
+            setCurrentProgress(mMaxProgress);
         }
-    }
-
-    public void setOnProgressUpdateListener(ProgressUpdateListener listener){
-        this.listener = listener;
-    }
-
-    public interface ProgressUpdateListener {
-        void onProgressUpdate(int current, int max);
     }
 }

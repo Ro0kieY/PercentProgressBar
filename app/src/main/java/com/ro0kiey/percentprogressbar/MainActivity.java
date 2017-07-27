@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         ppb7.progressIncreasedBy(1);
-                        ppb8.progressIncreasedBy(1);
-                        ppb9.progressIncreasedBy(1);
+                        ppb8.progressIncreasedBy(2);
+                        ppb9.progressIncreasedBy(3);
                         ppb10.progressIncreasedBy(1);
-                        ppb11.progressIncreasedBy(1);
-                        ppb12.progressIncreasedBy(1);
+                        ppb11.progressIncreasedBy(2);
+                        ppb12.progressIncreasedBy(3);
                     }
                 });
             }
