@@ -101,5 +101,6 @@ the default attributes are:
 
 ### About me 
 
-I'm a engineer, but try to be a coder.  
+I'm a engineer, but try to be a coder.  I'm now learning Android development by myself.
+If you have job oppoturnity, please email me.
 
