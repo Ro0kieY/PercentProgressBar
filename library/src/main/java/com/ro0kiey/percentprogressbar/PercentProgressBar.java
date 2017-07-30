@@ -20,7 +20,7 @@ public class PercentProgressBar extends View {
 
     private final int PROGRESS_BAR_CIRCULAR = 10;
 
-    //
+    //Circular状态的默认直径
     private final float default_layout_radius;
     //Horizontal状态的默认宽
     private final float default_layout_width;
