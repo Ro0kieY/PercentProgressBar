@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/lightBlack"
+    tools:context="com.ro0kiey.demo.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:current_progress="58"/>
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:current_progress="36"
+            app:progress_bar_color="@color/Pink"/>
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:current_progress="83"
+            app:progress_bar_color="@color/Purple"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            app:progress_bar_style="horizontal"
+            app:current_progress="59"/>
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb5"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/ppb4"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            app:progress_bar_style="horizontal"
+            app:current_progress="36"
+            app:progress_bar_color="@color/Pink"/>
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ppb5"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            app:progress_bar_style="horizontal"
+            app:current_progress="83"
+            app:progress_bar_color="@color/Purple"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:current_progress="0"
+            />
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:current_progress="0"
+            app:progress_bar_color="@color/Pink"/>
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:current_progress="0"
+            app:progress_bar_color="@color/Purple"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb10"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            app:progress_bar_style="horizontal"
+            app:current_progress="0"/>
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb11"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/ppb10"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            app:progress_bar_style="horizontal"
+            app:current_progress="0"
+            app:progress_bar_color="@color/Pink"/>
+
+        <com.ro0kiey.percentprogressbar.PercentProgressBar
+            android:id="@+id/ppb12"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/ppb11"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            app:progress_bar_style="horizontal"
+            app:current_progress="0"
+            app:progress_bar_color="@color/Purple"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
