@@ -39,7 +39,7 @@ use it in your code
     app:progress_bar_style="circular"/>
 ```
 
-use `progress_bar_style` attribute to decide the bar is `circular` or `horizontal`
+use `progress_bar_style` attribute to decide whether the bar is `circular` or `horizontal`.
 
 ****
 
