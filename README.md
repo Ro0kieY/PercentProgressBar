@@ -39,7 +39,7 @@ use it in your code
     app:progress_bar_style="circular"/>
 ```
 
-use `progress_bar_style` attribute to decide the bar is `circular` or `horizontal`
+use `progress_bar_style` attribute to decide whether the bar is `circular` or `horizontal`.
 
 ****
 
@@ -99,7 +99,26 @@ the default attributes are:
 
 ****
 
+### Public Methods
+
+* setOuterWidth() 
+* setOuterColor() 
+* setOuterAlpha()  
+* setProgressBarWidth()  
+* setProgressBarColor()  
+* setProgressBarAlpha()  
+* setCurrentProgress()  
+* setMaxProgress()  
+* setTextSize()  
+* setTextColor()  
+* setTextAlpha()  
+* setLittleCircleColor()  
+* setLittleCircleAlpha()
+
+****
+
 ### About me 
 
-I'm a engineer, but try to be a coder.  
+I'm a engineer, but try to be a coder.  I'm now learning Android development by myself.  
 
+If you have job opportunity, please email me.
