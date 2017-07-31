@@ -120,5 +120,9 @@ the default attributes are:
 ### About me 
 
 I'm a engineer, but try to be a coder.  I'm now learning Android development by myself.  
+<<<<<<< HEAD
+=======
+If you have job oppoturnity, please email me.
+>>>>>>> faffb7e057a4ee47f36e9547aa10a3c2d64f2307
 
 If you have job opportunity, please email me.
